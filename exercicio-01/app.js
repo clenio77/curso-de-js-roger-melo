@@ -24,7 +24,7 @@ Como mencionei durante a aula: não se preocupe em entender 100% o que os comand
 Utilize os espaços entre os comentários abaixo para executar os códigos dos 
 exercícios. Inclusive o alert mencionado acima.
 */
-
+//console.log(alert('JS is Awesome!'))
 
 
 /*
