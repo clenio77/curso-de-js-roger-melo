@@ -20,7 +20,11 @@
     4
     5
 */
-
+//let i = 0
+// while(i <= 5){
+//   console.log(i)
+//   i++
+// }
 
 
 /*
@@ -29,7 +33,9 @@
   - Utilizando um for loop, faça o mesmo que foi pedido no exercício 01.
 */
 
-
+// for(let i = 0; i <= 5;i++){
+//   console.log(`Dentro do For: ${i}`)
+// }
 
 /*
   03 - Comente o loop acima e:
@@ -41,7 +47,9 @@
 
   "Esta é a Xª vez que esta frase é exibida no console."
 */
-
+// for(let i = 1; i < 11; i++){
+//   console.log(`Está é a ${i}ª vez que esta frase é exibida no console.`)
+// }
 
 
 /*
@@ -54,7 +62,13 @@
   - Para ver se deu certo, exiba o upperCaseCities no console.
 */
 
-const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
+// const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
+// let upperCaseCities = []
+// for (i = 0; i < cities.length;i++){
+//   upperCaseCities.push(cities[i].toUpperCase())
+  
+// }
+// console.log(upperCaseCities)
 
 /*
   05 - Comente o console.log acima e:
@@ -67,6 +81,12 @@ const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
 
 const names = ['João Grilo', 'Chicó', 'Rosinha']
 
+let templateHTML = ''
+for (let i = 0; i < names.length; i++){
+  templateHTML += `<li>${names[i]}</li>`
+}
+//console.log(templateHTML)
+
 /*
   06 - Comente o console.log acima e:
 
@@ -77,6 +97,12 @@ const names = ['João Grilo', 'Chicó', 'Rosinha']
 */
 
 const numbers = ['91', '5', '30', '97', '83', '31']
+
+sum = 0
+for (let i = 0; i < numbers.length;i++){
+  sum += Number(numbers[i])
+}
+//console.log(sum === 337)
 
 /*
   07 - Comente o console.log acima.
@@ -102,3 +128,46 @@ const arrays = [
   [8, 32, 16],
   [2, 8, 4]
 ]
+
+let arraysSum = 0
+
+for (let i = 0; i < arrays.length; i++){
+  for(let j = 0; j < arrays[i].length;j++){
+    arraysSum += arrays[i][j]
+  }
+}
+console.log(arraysSum)
+
+
+
+
+//========================= TEORIA DE LOOPS  =============================================
+
+//for loop
+// for (let i = 0; i < 5; i++){
+//   console.log(`Dentro do loop: ${i}`)
+// }
+// console.log('loop finalizado')
+
+// const nomes = ['Linus', 'Ada','Bill']
+// for (let i = 0; i < nomes.length; i++){
+//   const HTMLTemplate = `<p>${nomes[i]}</p>`
+//   console.log(HTMLTemplate)
+// }
+
+//============================================================================================
+
+// while loop
+// let i = 0
+// while (i< 5){
+//   console.log(`Dentro do loop: ${i}`)
+//   i++
+// }
+
+// const nome = ['Jobs','Hopper','Turing']
+// let i = 0
+
+// while (i < nome.length){
+//   console.log(nome[i])
+//   i++
+// }
