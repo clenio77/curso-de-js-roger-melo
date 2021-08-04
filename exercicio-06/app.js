@@ -24,6 +24,13 @@
 */
 
 const fruits = ['morango', 'banana', 'mamão']
+if(fruits.includes('abacaxi')){
+  console.log('A string "abacaxi" existe no array fruits.')
+}else if(fruits.includes('pera')){
+  console.log('A string "pera" existe no array fruits.')
+} else{
+  console.log('Nem pera nem abacaxi existem no array "fruits".')
+}
 
 /*
   02
@@ -37,6 +44,20 @@ const fruits = ['morango', 'banana', 'mamão']
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
+
+const hour = 19
+const isMorning = hour >= 6 && hour < 11
+const isAfternoon = hour => 12 && hour < 17
+
+if(isMorning){
+  console.log('Bom dia!!')
+} else if(isAfternoon){
+  console.log('Boa tarde!!')
+} else{
+  console.log('Boa noite!!')
+}
+
+
 
 /*
   03
@@ -52,6 +73,22 @@ const fruits = ['morango', 'banana', 'mamão']
     também está funcionando.
 */
 
+const ageOdder = 43
+
+let priceMessage = null
+
+const isChild = ageOdder <= 7 
+const isOlder = ageOdder >= 65
+
+if(isChild || isOlder){
+  priceMessage = 'Para você, a entrada é grátis!!!!'
+}else{
+  priceMessage = 'A entrada é R$ 30,00.'
+}
+
+console.log(priceMessage)
+
+
 /*
   04
 
@@ -62,6 +99,19 @@ const fruits = ['morango', 'banana', 'mamão']
 */
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
+
+const numbersBetweeen11And90 = []
+
+for (let i = 0; i < numbers.length; i++){
+  const number = numbers[i]
+  const isNumberBetween11And90 = number >= 11 && number <= 90
+
+  if(isNumberBetween11And90){
+    numbersBetweeen11And90.push(number)
+  }
+}
+
+console.log(numbersBetweeen11And90)
 
 /*
   05
@@ -78,6 +128,21 @@ const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
 
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
 
+let numberCount = 0
+let booleanCount = 0
+let stringCount = 0
+
+for (let i = 0; i < crazyArray.length;i++){
+  if(typeof crazyArray[i] == 'number'){
+    numberCount += 1
+  }else if(typeof crazyArray[i] == 'boolean'){
+    booleanCount += 1
+  }else{
+    stringCount += 1
+  }
+}
+
+console.log(`O craziArray  tem ${booleanCount} booleans, ${numberCount} números e ${stringCount} strings.`)
 /*
   06
 
@@ -96,3 +161,42 @@ const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false
 */
 
 const randomNumbers = [73, 4, 67, 10, 31, 58]
+let numbersPar = []
+let numbersImpar = []
+
+for (let i = 0; i < randomNumbers.length;i++){
+  if (randomNumbers[i] % 2 === 0){
+    numbersPar.push(randomNumbers[i])
+  }else{
+    numbersImpar.push(randomNumbers[i])
+  }
+}
+
+console.log(`Numeros ímpares: ${numbersImpar.join(', ').replace(' 3', ' e 3')}. 
+\nNúmeros pares: ${numbersPar.join(', ').replace(' 5',' e 5')}.`)
+
+// ==========================   TEORIA   ===============================
+
+const age = 20
+
+if (age > 18){
+  //console.log('Você tem mais de 18 anos')
+}
+
+const simpsons = ['Marge','Homer','Lisa','Bart']
+
+if (simpsons.length > 5){
+  //console.log('o array tem bastante personagens!!!')
+}
+
+
+
+const password = 'opllee3e'
+
+if (password.length >= 12 && password.includes('1')){
+  console.log('senha muito forte =)')
+}else if(password.length >= 8 || password.includes('1') && password.length >= 5){
+  console.log('senha forte')
+} else{
+  console.log('a senha deve ter 8 ou mais caracteres')
+}
