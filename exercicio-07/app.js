@@ -6,6 +6,8 @@
 */
 
 console.log(true, false)
+console.log(!true, !false)
+
 
 /*
   02
@@ -17,6 +19,12 @@ console.log(true, false)
 */
 
 const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
+if(!animals.includes('leão')){
+  console.log('Leão não existe no array animals')
+}else{
+  console.log('Existe um leão no array animals')
+}
+
 
 /*
   03
@@ -30,6 +38,17 @@ const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 */
 
 const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
+let result = 0
+
+for (let i = 0; i < randomNumbers.length; i++){
+ 
+  if(result > 400 ){
+    console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${result}`)
+    break
+  }
+  result += randomNumbers[i]
+}
+console.log(result)
 
 /*
   04
@@ -41,6 +60,16 @@ const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
 */
 
 const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sabedoria.']
+
+let newSentence = '' 
+
+for (let i = 0; i < sentence.length; i++){
+  if(sentence[i] == 'certeza'){
+    continue
+  }
+  newSentence += `${sentence[i]} `
+}
+console.log(newSentence)
 
 /*
   05
@@ -58,6 +87,44 @@ const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sab
 */
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
+
+let stringsAmount = 0
+let booleansAmount = 0
+let firstFourStrings = []
+let totalIterations = 0
+
+
+for (let i = 0; i < randomValues.length; i++){
+  const item = randomValues[i]
+  const typeOfItem = typeof item
+  const isItemString = typeOfItem === 'string'
+  const isItemBoolean =  typeOfItem === 'boolean'
+
+
+  if (stringsAmount === 4){
+    break
+  }
+
+  if (isItemString){
+    stringsAmount++
+    firstFourStrings.push(randomValues[i])
+  }
+
+  if (isItemBoolean){
+    booleansAmount++
+  }
+
+  totalIterations++
+}
+
+const lasItem = firstFourStrings[firstFourStrings.length-1]
+fourStrings = firstFourStrings.join(', ').replace(`, ${lasItem}`, ` e ${lasItem}`)
+
+
+console.log(`3 informações sobre o array randomValues:
+  - As primeiras 4 strings são ${fourStrings};
+  - Até que as primeiras 4 strings fossem iteradas, ${booleansAmount} booleans foram iterados;
+  - O array foi iterado por ${totalIterations} vezes.`)
 
 /*
   06
@@ -79,8 +146,26 @@ const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS',
     da bebida além da que você escolheu.
 */
 
-// const drinkType
+const drinkType = 'agua'
+let drinkMessage = null
 
+switch(drinkType){
+  case 'agua':
+    drinkMessage = 'Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio.'
+    break
+  case 'refrigetante'  :
+    drinkMessage = 'Bebida não alcoólica e não fermentada, fabricada industrialmente, à base de água mineral e açúcar.'
+    break
+
+  case 'suco':
+    drinkMessage = 'Bebida produzida do líquido extraído de frutos.'  
+    break
+
+  default:
+    drinkMessage = 'Bebida desconhecida'  
+  }
+
+  console.log(drinkMessage)
 /*
   07
 
@@ -89,7 +174,7 @@ const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS',
     para testar o switch que você escreveu.
 */
 
-const a = 2
+const number = 2
 
 // if (a === 0) {
 //   console.log(`O valor de "a" é ${a}`)
@@ -97,4 +182,68 @@ const a = 2
 //   console.log(`O valor de "a" é ${a}`)
 // } else {
 //   console.log('O valor de "a" é qualquer número, exceto 0 e 1')
+// }
+
+switch (number){
+  case 0:
+    console.log(`O valor de "number" é ${number}`)
+    break
+  
+  case 1:
+    console.log(`O valor de "number" é ${number}`)
+    break
+  
+  default:
+    console.log(`O valor de "number" é qualquer número, exceto 0 e 1`)
+    break
+  
+}
+
+
+// let isUserLoggedIn = false;
+
+// if (!isUserLoggedIn){
+//   console.log('Voce precisa fazer login pra continuar...')
+// }
+
+// // ============================================================
+
+// const scores = [50, 25, 0, 30, 100, 20, 10]
+
+// for (let i = 0; i < scores.length; i++){
+// if(scores[i] === 0){
+//   continue
+// }
+
+//   console.log(`sua pontuação ${scores[i]}`)
+
+//   if (scores[i] === 100){
+//     console.log('Parabéns, você conseguiu atingir o máximo de pontos')
+//     break
+//   }
+// }
+
+// console.log('=========================================================================')
+
+// // switch statement
+
+// const grade = 'B'
+
+// switch (grade){
+//   case 'A':
+//     console.log('Voce tirou um A')
+//     break
+//     case 'B':
+//     console.log('Voce tirou um B')
+//     break
+//   case 'C':
+//     console.log('Voce tirou um C')
+//     break
+//   case 'D':
+//     console.log('Voce tirou um D')
+//     break
+//   default:
+//     console.log('Nota inválida')  
+
+
 // }
